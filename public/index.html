@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="style.css" rel="stylesheet">
+    <script src="htmx.min.js"></script>
+  </head>
+  <body>
+    <input type="text" name="startNode" />
+    <ul
+      id="list"
+      class="virtual-scroll"
+      hx-post="items"
+      hx-trigger="scroll"
+      hx-swap="innerHTML"
+      hx-target="#list>.container>.visible-nodes-container"
+    >
+      <!-- hx-include="input[name='startNode']" -->
+      <div class="container">
+        <div class="visible-nodes-container">
+        </div>
+      </div>
+    </ul>
+
+    <script src="app.js"></script>
+  </body>
+</html>
