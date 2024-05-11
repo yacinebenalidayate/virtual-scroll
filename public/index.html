@@ -3,27 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Virtual Scroll</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <script src="htmx.min.js"></script>
   </head>
   <body>
     <input type="text" name="startNode" />
-    <ul
-      id="list"
-      class="virtual-scroll"
+
+    <div
+      class="nodes-list"
       hx-post="items"
-      hx-trigger="scroll"
+      hx-trigger="scroll delay:10ms"
       hx-swap="innerHTML"
-      hx-target="#list>.container>.visible-nodes-container"
+      hx-target="ul"
     >
-      <!-- hx-include="input[name='startNode']" -->
-      <div class="container">
-        <div class="visible-nodes-container">
+      <div class="nodes-list-wrapper">
+        <div class="visible-nodes-list-wrapper">
+          <ul class="list-group list-group-flush"></ul>
         </div>
       </div>
-    </ul>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="htmx.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

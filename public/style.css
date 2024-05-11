@@ -1,8 +1,25 @@
-ul {
-  height: 200px !important;
-  overflow-y: scroll;
+*, ::after, ::before {
+  box-sizing: border-box;
 }
 
-li {
-  height: 20px !important;
+body {
+  padding: 10px;
 }
+
+input {
+  margin-bottom: 10px;
+}
+
+.nodes-list {
+  height: 300px !important;
+  overflow-y: scroll;
+  border: 1px solid #000;
+}
+
+.nodes-list {
+  height: 100%;
+}
+
+/* li { */
+/*   height: 20px !important; */
+/* } */
